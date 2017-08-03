@@ -9,11 +9,12 @@ var Polymer = Polymer || {};
  * 
  * @polymerMixinClass Collaborne.AppLocalizeChromeI18nMixin
  * @param {Polymer.Element} parent The polymer parent element.
+ * @param {string} pathToLocales Path were the localization files are stored
  * @return {Function} AppLocalizeChromeI18nMixin mixed class.
  *
  * @demo demo/index.html
  */
-Polymer.AppLocalizeChromeI18nMixin = parent =>
+Polymer.AppLocalizeChromeI18nMixin = (parent, pathToLocales = 'locales/') =>
 	class AppLocalizeChromeI18nMixin extends
 		Polymer.mixinBehaviors([ Polymer.AppLocalizeBehavior ],
 		parent) {
@@ -38,9 +39,10 @@ Polymer.AppLocalizeChromeI18nMixin = parent =>
 	}
 
 	_onLanguageChanged(language) {
-		this.loadResources(this.resolveUrl(`/locales/${language}.json`));
+		this.loadResources(this.resolveUrl(`${pathToLocales}${language}.json`));
 	}
 
 };
 
 </script>
+
