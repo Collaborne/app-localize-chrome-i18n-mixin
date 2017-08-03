@@ -1,0 +1,46 @@
+<!doctype html>
+<link rel="import" href="../polymer/lib/legacy/legacy-element-mixin.html">
+<link rel="import" href="../app-localize-behavior/app-localize-behavior.html">
+<script>
+var Polymer = Polymer || {};
+
+/**
+ * Utility to load localization
+ * 
+ * @polymerMixinClass Collaborne.AppLocalizeChromeI18nMixin
+ * @param {Polymer.Element} parent The polymer parent element.
+ * @return {Function} AppLocalizeChromeI18nMixin mixed class.
+ *
+ * @demo demo/index.html
+ */
+Polymer.AppLocalizeChromeI18nMixin = parent =>
+	class AppLocalizeChromeI18nMixin extends
+		Polymer.mixinBehaviors([ Polymer.AppLocalizeBehavior ],
+		parent) {
+
+	static get properties() {
+		return {
+			extractTranslation: {
+				type: Function,
+				value: function() {
+					return function(resources, language, key) {
+						return resources[key] ? resources[key].message : null;
+					}
+				},
+			},
+		};
+	}
+
+	static get observers() {
+		return [
+			'_onLanguageChanged(language)'
+		];
+	}
+
+	_onLanguageChanged(language) {
+		this.loadResources(this.resolveUrl(`locales/${language}.json`));
+	}
+
+};
+
+</script>

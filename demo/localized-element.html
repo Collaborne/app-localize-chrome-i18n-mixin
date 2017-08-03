@@ -1,0 +1,20 @@
+<!doctype html>
+<link rel="import" href="../../polymer/polymer-element.html">
+<link rel="import" href="../app-localize-chrome-i18n-mixin.html">
+
+<dom-module id="localized-element">
+
+	<template>
+		<div>[[localize('hello')]]</div>
+	</template>
+
+	<script>
+		class LocalizedElement extends Polymer.AppLocalizeChromeI18nMixin(Polymer.Element) {
+			static get is() {
+				return 'localized-element';
+			}
+		}
+		customElements.define(LocalizedElement.is, LocalizedElement);
+	</script>
+
+</dom-module>

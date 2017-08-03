@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<title>app-localize-chrome-i18n-mixin</title>
+
+		<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+		<link rel="import" href="../../iron-flex-layout/iron-flex-layout-classes.html">
+		<link rel="import" href="../../paper-styles/demo-pages.html">
+		<link rel="import" href="../../paper-toggle-button/paper-toggle-button.html">
+		<link rel="import" href="localized-element.html">
+
+	</head>
+	<body>
+
+		<dom-bind>
+			<template>
+				<custom-style>
+					<style include="iron-flex">
+						paper-toggle-button {
+							margin: 0 8px;
+						}
+					</style>
+				</custom-style>
+
+				<div class="layout horizontal center-center horizontal-section">
+	 				<span>English</span>
+					<paper-toggle-button on-change="_toggle" id="switch"></paper-toggle-button>
+					<span>German</span>
+				</div>
+
+				<div class="horizontal-section">
+					<localized-element language="[[language]]"></localized-element>
+				</div>
+
+				<script>
+					var scope = document.querySelector('dom-bind');
+					scope.language = 'en';
+					scope._toggle = function() {
+						this.language = this.$.switch.checked ? 'de' : 'en';
+					};
+				</script>
+			</template>
+		</dom-bind>
+
+	</body>
+	</html>

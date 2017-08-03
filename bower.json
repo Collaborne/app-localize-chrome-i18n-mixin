@@ -1,0 +1,30 @@
+{
+  "name": "app-localize-chrome-i18n-mixin",
+  "homepage": "https://github.com/Collaborne/app-localize-chrome-i18n-mixin",
+  "authors": [
+    "Ronny Roeller <ronny@collaborne.com>"
+  ],
+  "description": "Mixin to localize Polymer applications with Chrome i18n translation files",
+  "main": "app-localize-chrome-i18n-mixin.html",
+  "keywords": [
+    "polymer",
+    "localization",
+    "translation",
+    "i18n"
+  ],
+  "license": "Apache2",
+  "ignore": [
+    "**/.*",
+    "bower_components"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0",
+    "app-localize-behavior": "Collaborne/app-localize-behavior#fix/103"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^2.0.0",
+    "paper-toggle-button": "PolymerElements/paper-toggle-button#^2.0.0",
+    "paper-styles": "PolymerElements/paper-styles#^2.0.0",
+    "web-component-tester": "*"
+  }
+}
