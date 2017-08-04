@@ -39,7 +39,9 @@ Polymer.AppLocalizeChromeI18nMixin = (parent, pathToLocales = 'locales/') =>
 	}
 
 	_onLanguageChanged(language) {
-		this.loadResources(this.resolveUrl(`${pathToLocales}${language}.json`));
+		if (language) {
+			this.loadResources(this.resolveUrl(`${pathToLocales}${language}.json`));
+		}
 	}
 
 };
