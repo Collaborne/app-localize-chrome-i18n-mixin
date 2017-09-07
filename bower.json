@@ -26,5 +26,8 @@
     "paper-toggle-button": "PolymerElements/paper-toggle-button#^2.0.0",
     "paper-styles": "PolymerElements/paper-styles#^2.0.0",
     "web-component-tester": "*"
+  },
+  "demos": {
+    "Demo": "demo/index.html"
   }
 }
