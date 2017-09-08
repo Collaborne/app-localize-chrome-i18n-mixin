@@ -1,4 +1,4 @@
-# app-localize-chrome-i18n-mixin
+# app-localize-chrome-i18n-mixin [![Build Status](https://travis-ci.org/Collaborne/app-localize-chrome-i18n-mixin.svg?branch=master)](https://travis-ci.org/Collaborne/app-localize-chrome-i18n-mixin)
 
 _[Blog post about the element](https://medium.com/collaborne-engineering/localize-polymer-apps-with-translation-platform-46a2acb9373b)_
 
