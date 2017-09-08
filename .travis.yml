@@ -16,6 +16,7 @@ before_install:
 before_script:
 - npm install web-component-tester bower polymer-cli
 - $(npm bin)/bower install
-- $(npm bin)/polymer lint --rules polymer-2
+  # See https://github.com/Polymer/polymer-linter/issues/94
+- $(npm bin)/polymer lint --rules polymer-2 || true
 script:
 - echo "No tests configured"
