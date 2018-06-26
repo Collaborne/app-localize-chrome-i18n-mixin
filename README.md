@@ -1,5 +1,8 @@
 # app-localize-chrome-i18n-mixin [![Build Status](https://travis-ci.org/Collaborne/app-localize-chrome-i18n-mixin.svg?branch=master)](https://travis-ci.org/Collaborne/app-localize-chrome-i18n-mixin)
 
+[![Published on Vaadin  Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/Collaborneapp-localize-chrome-i18n-mixin)
+[![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/Collaborneapp-localize-chrome-i18n-mixin.svg)](https://vaadin.com/directory/component/Collaborneapp-localize-chrome-i18n-mixin)
+
 _[Blog post about the element](https://medium.com/collaborne-engineering/localize-polymer-apps-with-translation-platform-46a2acb9373b)_
 
 Mixin to localize Polymer applications with [Chrome i18n](https://developer.chrome.com/extensions/i18n) translation files. The mixin is a thin wrapper around [`<app-localize-behavior>`](https://github.com/PolymerElements/app-localize-behavior).
