@@ -37,6 +37,14 @@ Polymer.AppLocalizeChromeI18nMixin = (parent, pathToLocales = 'locales/') =>
 				type: Boolean,
 				value: false,
 			},
+
+			/**
+			 * Last loading language
+			 */
+			_loadingLanguage: {
+				type: String,
+				value: null,
+			},
 		};
 	}
 
@@ -49,15 +57,17 @@ Polymer.AppLocalizeChromeI18nMixin = (parent, pathToLocales = 'locales/') =>
 	ready() {
 		super.ready();
 
-		this.addEventListener('app-localize-resources-loaded', () => this._loading = false);
+		this.addEventListener('app-localize-resources-loaded', () => {
+			this._loading = false;
+		});
 	}
 
 	_onLanguageChanged(language) {
-		if (language) {
+		if (language && (language !== this._loadingLanguage)) {
 			if (this._loading) {
 				// Avoid race condition
-				// If the element uses first language1, then starts loads language2, and then
-				// immediately switches back to language1: The language2 will end up in the
+				// If the element uses first language1, then starts loads language2, and the
+				// immitately switches back to language1: The language2 will end up in the
 				// AppLocalizeBehavior cache since its loading finishes later than language1
 				// (which is alrady in the browser cache).
 				// To prevent this, we back off here and try to load the new language once the
@@ -66,6 +76,7 @@ Polymer.AppLocalizeChromeI18nMixin = (parent, pathToLocales = 'locales/') =>
 				return;
 			}
 			this._loading = true;
+			this._loadingLanguage = language;
 			this.loadResources(this.resolveUrl(`${pathToLocales}${language}.json`));
 		}
 	}
