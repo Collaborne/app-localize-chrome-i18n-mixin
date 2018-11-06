@@ -5,7 +5,7 @@
 
 _[Blog post about the element](https://medium.com/collaborne-engineering/localize-polymer-apps-with-translation-platform-46a2acb9373b)_
 
-Mixin to localize Polymer applications with [Chrome i18n](https://developer.chrome.com/extensions/i18n) translation files. The mixin is a thin wrapper around [`<app-localize-behavior>`](https://github.com/PolymerElements/app-localize-behavior).
+Mixin to localize Polymer applications with [Chrome i18n](https://developer.chrome.com/extensions/i18n) translation files. The mixin is a thin wrapper around (_a forked version of_) [`<app-localize-behavior>`](https://github.com/PolymerElements/app-localize-behavior).
 
 Chrome i18n translation files have these advantages over the localization files required by `<app-localize-behavior>`:
 
