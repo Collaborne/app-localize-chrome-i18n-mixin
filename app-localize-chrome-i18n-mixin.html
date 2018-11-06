@@ -67,7 +67,11 @@ Polymer.AppLocalizeChromeI18nMixin = (parent, pathToLocales = 'locales/') =>
 		this.addEventListener('app-localize-resources-loaded', () => {
 			this._loading = false;
 			if (this._nextLoadingLanguage) {
-				this._onLanguageChanged(this._nextLoadingLanguage);
+				// Reset the pending language so that we don't end up calling _onLanguageChanged
+				// when loading this language is done as well.
+				const language = this._nextLoadingLanguage;
+				this._nextLoadingLanguage = null;
+				this._onLanguageChanged(language);
 			}
 		});
 	}
